@@ -5,7 +5,11 @@
 // License: public domain <http://unlicense.org/>
 // Author:  Maciej Konieczny <hello@narf.pl>
 
-(function ($) {
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define('jquery-typing', ['jquery'], factory);
+  } else factory(root.jQuery);
+}(this, function($) {
 
     //--------------------
     //  jQuery extension
@@ -79,4 +83,4 @@
             stopTyping(event, 0);
         });
     }
-})(jQuery);
+}));
